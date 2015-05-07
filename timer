@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import random
+import colors as c
+import time as t
+
+hundredths = 1
+print(c.clear)
+
+'''
+This is my Timer
+'''
+
+while True:
+    t.sleep(.01)
+    print(c.clear)
+    print(c.green + '[Control + C to Stop]' + c.reset, end=': ')
+    print(hundredths)
+    hundredths+=1
