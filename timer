@@ -4,16 +4,36 @@ import random
 import colors as c
 import time as t
 
-hundredths = 1
+hundredths = 0
+seconds = 0
+minutes = 0
+hours = 0
+days = 0
+weeks = 0
 print(c.clear)
 
 '''
 This is my Timer
 '''
 
+form = c.clear + '{} Weeks, {} Days {:02}:{:02}:{:02}.{:02}' + c.reset
+
 while True:
-    t.sleep(.01)
-    print(c.clear)
-    print(c.green + '[Control + C to Stop]' + c.reset, end=': ')
-    print(hundredths)
+    print(form.format(weeks,days,hours,minutes,seconds,hundredths))
+    t.sleep(0.01)
     hundredths+=1
+    if hundredths==100:
+        seconds+=1
+        hundredths=0
+    if seconds==60:
+        minutes+=1
+        seconds=0
+    if minutes==60:
+        hours+=1
+        minutes=0
+    if hours==24:
+        days+=1
+        hours=0
+    if days==7:
+        weeks+=1
+        days=0
