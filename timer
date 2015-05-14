@@ -16,24 +16,28 @@ print(c.clear)
 This is my Timer
 '''
 
-form = c.clear + '{} Weeks, {} Days {:02}:{:02}:{:02}.{:02}' + c.reset
+form = c.clear + '{} Weeks' + c.orange, '{} Days' + c.yellow, '{:02}' + c.green, :'{:02}' + c.cyan, :'{:02}' + c.blue, .'{:02}' + c.magenta, c.reset
 
-while True:
-    print(form.format(weeks,days,hours,minutes,seconds,hundredths))
-    t.sleep(0.01)
-    hundredths+=1
-    if hundredths==100:
-        seconds+=1
-        hundredths=0
-    if seconds==60:
-        minutes+=1
-        seconds=0
-    if minutes==60:
-        hours+=1
-        minutes=0
-    if hours==24:
-        days+=1
-        hours=0
-    if days==7:
-        weeks+=1
-        days=0
+try:
+    while True:
+        print(form.format(weeks,days,hours,minutes,seconds,hundredths))
+        t.sleep(0.01)
+        hundredths+=1
+        if hundredths==100:
+            seconds+=1
+            hundredths=0
+        if seconds==60:
+            minutes+=1
+            seconds=0
+        if minutes==60:
+            hours+=1
+            minutes=0
+        if hours==24:
+            days+=1
+            hours=0
+        if days==7:
+            weeks+=1
+            days=0
+except:
+    exit()
+
