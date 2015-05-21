@@ -34,4 +34,6 @@ while True:
 
     print(c.clear)
 
-print(snake)
+    print(snake)
+    t.sleep(6)
+    print(c.clear)
