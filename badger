@@ -13,27 +13,20 @@ snake = '''
          \/         \/         \/        \/        \/  \/
 '''
 
+print(c.clear)
+
 while True:
 
     for verse in range(5):
-
-        print(c.clear)
-
         for badger in range(12):
             print("Badgers!")
             t.sleep(0.38)
-
-        print(c.clear)
-
         for mushrooms in range(2):
             print("Muuuuushroooom!")
             t.sleep(0.8)
-
         t.sleep(0.38)
         print(c.clear)
-
     print(c.clear)
-
     print(snake)
     t.sleep(6)
     print(c.clear)
