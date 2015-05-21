@@ -16,7 +16,7 @@ print(c.clear)
 This is my Timer
 '''
 
-form = c.clear + '{} Weeks' + c.orange, '{} Days' + c.yellow, '{:02}' + c.green, :'{:02}' + c.cyan, :'{:02}' + c.blue, .'{:02}' + c.magenta, c.reset
+form = c.clear + c.cyan + '{} Weeks {} Days {:02}:{:02}:{:02}.{:02}' + c.reset
 
 try:
     while True:
@@ -38,6 +38,6 @@ try:
         if days==7:
             weeks+=1
             days=0
-except:
+except KeyboardInterrupt:
+    print()
     exit()
-
