@@ -2,15 +2,12 @@
 import colors as c
 import time as t
 import random as r
-
 print(c.clear)
 '''
 What number do you need?
 '''
-
 n = input('Which number? ')
 print('Here is your ' + n + ' multiplication tables.')
-   
-for count in range(12,0,-1):
+for count in range(12,0,-1)):
     print(count, end=' x ' + n + ' =  ')
     print(int(n) * count)
