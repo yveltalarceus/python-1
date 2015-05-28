@@ -15,14 +15,22 @@ def prompt(question):
     print(c.reset)
     return answer
 
+def die():
+    print("Thou art cast into the Gorge of Eternal Peril")
+    exit()
 
+def live():
+    print("Right, off you go then")
 
 name = prompt("What is your name?")
 quest = prompt("What is your quest?")
 
-if name in  ["Lancelot", "Galahad"]:
+if name in  ["lancelot", "galahad"]:
     color = prompt("What is your favourite colour?")
-    print("Right, off you go then!")
+    if " no " in color:
+        die()
+    live()
+
 elif name == "Robin":
     pass
 elif name == "Galahad":
@@ -31,10 +39,3 @@ elif name == "Arthur":
     pass
 else:
     pass #everyone else
-form = '''
-name: {}
-quest: {}
-color: {}
-'''
-
-print(form.format(name,color,quest))
