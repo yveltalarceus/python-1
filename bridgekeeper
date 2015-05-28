@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+import time as t
+import random
+import colors as c
+print(c.clear + '''
+He who would cross the Bridge of Death
+Must answer me these questions three,
+Ere the other side he see.
+''' + c.reset)
+
+def prompt(question):
+    print(c.green + question)
+    answer = input('> ' + c.blue)
+    answer = answer.lower().strip()
+    print(c.reset)
+    return answer
+
+
+
+name = prompt("What is your name?")
+quest = prompt("What is your quest?")
+
+if name in  ["Lancelot", "Galahad"]:
+    color = prompt("What is your favourite colour?")
+    print("Right, off you go then!")
+elif name == "Robin":
+    pass
+elif name == "Galahad":
+    pass
+elif name == "Arthur":
+    pass
+else:
+    pass #everyone else
+form = '''
+name: {}
+quest: {}
+color: {}
+'''
+
+print(form.format(name,color,quest))

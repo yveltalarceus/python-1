@@ -5,11 +5,11 @@ import time as t
 import random as r
 
 snake = '''
-      _________ _______      _____   ____  __.___________._.
-     /   _____/ \      \    /  _  \ |    |/ _|\_   _____/| |
-     \_____  \  /   |   \  /  /_\  \|      <   |    __)_ | |
-     /        \/    |    \/    |    \    |  \  |        \ \|
-    /_______  /\____|__  /\____|__  /____|__ \/_______  / __
+ _________ _______      _____   ____  __.___________._.
+  /_____/ \      \    /  _  \ |    |/ _|\_   _____/| |
+  \_____\  /   |   \  /  /_\  \|      <   |    __)_ | |
+  /        \/    |    \/    |    \    |  \  |        \ \|
+ /_______/\____|__  /\____|__  /____|__ \/_______  / __
             \/         \/         \/        \/        \/  \/
 '''
 
@@ -21,12 +21,15 @@ while True:
         for badger in range(12):
             print("Badgers!")
             t.sleep(0.38)
-        for mushrooms in range(2):
-            print("Muuuuushroooom!")
-            t.sleep(0.8)
+        if verse < 4:
+            for mushrooms in range(2):
+                print("Muuuuushroooom!")
+                t.sleep(0.8)
         t.sleep(0.38)
         print(c.clear)
     print(c.clear)
     print(snake)
     t.sleep(6)
     print(c.clear)
+    print(c.clear)
+
