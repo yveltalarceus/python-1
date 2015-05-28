@@ -7,35 +7,31 @@ He who would cross the Bridge of Death
 Must answer me these questions three,
 Ere the other side he see.
 ''' + c.reset)
-
 def prompt(question):
     print(c.green + question)
     answer = input('> ' + c.blue)
     answer = answer.lower().strip()
     print(c.reset)
     return answer
-
 def die():
     print("Thou art cast into the Gorge of Eternal Peril")
     exit()
-
 def live():
     print("Right, off you go then")
-
 name = prompt("What is your name?")
 quest = prompt("What is your quest?")
-
 if name in  ["lancelot", "galahad"]:
     color = prompt("What is your favourite colour?")
     if " no " in color:
         die()
-    live()
-
 elif name == "Robin":
-    pass
-elif name == "Galahad":
-    pass
+    capital = prompt("What is the capital of Assyria?")
+    if answer not in ["Assur", "Nineveh"]:
+        die()
 elif name == "Arthur":
-    pass
+    swallow = prompt("What is the air-speed velocity of an unladen swallow?")
+    if answer not in ["African", "European"]:
+        die()
+live()
 else:
-    pass #everyone else
+    print("LOOK FOR AND TRIGGER THE EASTER EGG!!!!!")
