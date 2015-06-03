@@ -3,7 +3,7 @@ import time as t
 import random
 import colors as c
 print(c.clear + '''
-He who would cross the Bridge of Death
+Who would cross the Bridge of Death
 Must answer me these questions three,
 Ere the other side he see.
 ''' + c.reset)
