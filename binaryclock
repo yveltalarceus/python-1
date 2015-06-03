@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+import time as t
+import colors as c
+n=0
+while True:
+    print(bin(n))
+    n+=1
+    t.sleep(1)
+    
+        
