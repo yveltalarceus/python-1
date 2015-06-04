@@ -2,36 +2,40 @@
 import time as t
 import random
 import colors as c
-print(c.clear + '''
+print(c.clear + c.red + '''
 Who would cross the Bridge of Death
 Must answer me these questions three,
 Ere the other side he see.
 ''' + c.reset)
 def prompt(question):
     print(c.green + question)
-    answer = input('> ' + c.blue)
+    answer = input(c.cyan + '--> ')
     answer = answer.lower().strip()
     print(c.reset)
     return answer
 def die():
-    print("Thou art cast into the Gorge of Eternal Peril")
+    print(c. red + "Thou art cast into the Gorge of Eternal Peril")
     exit()
 def live():
-    print("Right, off you go then")
-name = prompt("What is your name?")
+    print(c.orange + "Right, off you go then")
+name = prompt(c.violet + "What is your name?")
 quest = prompt("What is your quest?")
 if name in  ["lancelot", "galahad"]:
-    color = prompt("What is your favourite colour?")
+    color = prompt(c.magenta + "What is your favourite colour?")
     if " no " in color:
         die()
-elif name == "Robin":
-    capital = prompt("What is the capital of Assyria?")
-    if answer not in ["Assur", "Nineveh"]:
+elif name == "robin":
+    capital = prompt(c.yellow + "What is the capital of Assyria?")
+    if capital not in ["assur", "nineveh"]:
         die()
-elif name == "Arthur":
-    swallow = prompt("What is the air-speed velocity of an unladen swallow?")
-    if answer not in ["African", "European"]:
+elif name == "arthur":
+    swallow = prompt(c.blue + "What is the air-speed velocity of an unladen swallow?")
+    if "african" in swallow or "european" in swallow:
+        print(c.yellow + "I don't know that!")
+    elif "11" in swallow or "24" in swallow:
+        live()
+    else:
         die()
-live()
+    live()
 else:
-    print("LOOK FOR AND TRIGGER THE EASTER EGG!!!!!")
+    print(c.green + "LOOK FOR AND TRIGGER THE EASTER EGGS!!!!!")
