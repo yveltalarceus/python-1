@@ -13,6 +13,7 @@ def prompt(question):
     answer = answer.lower().strip()
     print(c.reset)
     return answer
+
 def die():
     print(c. red + "Thou art cast into the Gorge of Eternal Peril")
     exit()
