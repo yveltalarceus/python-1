@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+
+import colors as c
+import random as r
+
+print(c.clear)
+print("What quiz would you like to play?")
+print("The Options are the Unicorn quiz or the Squiz.")
+
+chosen_quiz = input("--> ")
+
+if chosen_quiz.startswith("u"):
+    import fquiz as quiz
+if chosen_quiz.startswith("s"):
+    import squiz as quiz
+
+print(c.clear)
+print(quiz.intro)
+
+while quiz.questions:
+    question_function = r.choice(quiz.questions)
+    is_correct = question_function()
+    if is_correct:
+        quiz.questions.remove(question_function)
