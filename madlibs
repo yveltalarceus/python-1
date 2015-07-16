@@ -1,44 +1,58 @@
 #!/usr/bin/env python3
-
-
-text = '''
-There was {} in the world. So God told Noah that it was going to {}
-for a {} time. God gave Noah {} on what to do: "Make a {}. It
-should be made out of gopher {} and should be {} {} long, and
-75 {} wide. Take with you {} of every creature: One {},
-and one female." So Noah gathered his {} together, and they
-{} the ark. Noah`s friends {} out {} at him as
-he worked, but Noah didn`t pay attention to them. Finally after 120
-{}, the ark was {}. They then gathered all the creatures,
-and as the last one boarded, it began to {}. For 40 {}
-and 40 {}, it went on. The Earth became covered with {}. After a year
-and a day, they found {}, and everyone else was {}. And as a sign
-that God would never {} the Earth again, he gave them a/an {}.
+import colors as c
+from utils import ask
+print(c.clear + c.green + "Welcome to Mad Libs" + c.reset)
+text= '''Pokemon Theme Song
+I wanna be the very best
+Like no one ever was
+To {Verb1} them is my real test
+To {Verb2} them is my cause
+I will travel across the land 
+{Verb Ending In -ing} far and wide
+Each pokemon to understand
+The {Noun1} that's inside
+Pokemon ! It's you and me
+I know its my {Noun2},
+Pokemon ! Oh you're my {Adjective} friend
+In a world we must {Verb3}
+Pokemon ! A heart so true
+Our {Noun3} will pull us through,
+You {Verb4} me and I'll {Verb5} you, 
+Pokemon ! Gotta {Verb6} em all
+Every challenge along the way
+With {Verb7} I will face.
+I will {Verb8} every day
+To claim my rightful {Position}. 
+{Verb9} with me,
+The time is right,
+There's no better {Noun4}.
+Arm in arm we'll win the {Noun5}
+It's always been our {Noun6} !
 '''
-
-words = [
-    'noun',
-    'verb',
-    'adjective',
-    'noun (plural)',
-    'vehicle',
-    'noun',
-    'number',
-    'noun (plural)',
-    'noun (plural)',
-    'number',
-    'adjective',
-    'noun',
-    'verb ending in "ed"',
-    'verb ending in "ed"',
-    'noun (plural)',
-    'measurement of time (plural)',
-    'verb ending in "ed"',
-    'noun (plural)',
-    'noun (plural)',
-    'type of liquid',
-    'noun',
-    'adjective',
-    'verb',
-    'noun',
-]
+text_lines = text.splitlines()
+title = text_lines[0]
+text = "\n ".join(text_lines[1:])
+words = {
+    "Verb1" : None,
+    "Verb2" : None,
+    "Verb Ending In -ing" : None,
+    "Noun1" : None,
+    "Noun2" : None,
+    "Adjective" : None,
+    "Verb3" : None,
+    "Noun3" : None,
+    "Verb4" : None,
+    "Verb5" : None,
+    "Verb6" : None,
+    "Verb7" : None,
+    "Verb8" : None,
+    "Position" : None,
+    "Verb9" : None,
+    "Noun4" : None,
+    "Noun5" : None,
+    "Noun6" : None
+}
+for key in words:
+    words[key] = c.magenta + ask(key.rstrip('0123456789') + ': ') + c.reset
+print(c.base3 + title + c.reset)
+print(text.format(**words))
